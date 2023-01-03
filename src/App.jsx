@@ -1,23 +1,38 @@
 import './App.css'
-import { CardContainer } from './components/Card/index.jsx'
-import {data} from './dataSamples/card'
+import { ButtonDefault } from './components/Button'
+import { CardDefault } from './components/CardDefault/index'
+import { data } from './dataSamples/card'
+import React, { useState } from 'react'
+
+let numPerson = 0
 
 function App () {
-  return data.map((items, i) => {
-    const propsCard = {
-      card: {
-        key: i,
-        name: items.name.first,
-        surname: items.name.last,
-        email: items.email,
-        img: {
-          src: items.picture.medium,
-          alt: items.name.first
-        }
-      }
+  const [personState, setPersonState] = useState([])
+
+  const addPerson = () => {
+    if (numPerson === data.length) {
+      numPerson = 0
+    } else {
+      setPersonState([...personState, data[numPerson]])
+      numPerson++
     }
-    return <CardContainer props={propsCard} />
-  })
+    console.log('a')
+  }
+
+  return (
+    <div>
+      {personState.map((items, i) => {
+        <CardDefault
+          key={i}
+          name={items.name.first}
+          surname={items.name.last}
+          email={items.email}
+          img={items.picture.medium}
+        />
+      })}
+      <ButtonDefault onClick={addPerson} />
+    </div>
+  )
 }
 
 export default App

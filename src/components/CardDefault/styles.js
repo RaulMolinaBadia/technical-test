@@ -13,7 +13,7 @@ export const Image = styled.img`
     grid-area: img;
 
 `;
-export const Surname = styled.p`
+export const Name = styled.p`
     grid-area: surname;
     font-weight: bold;
     text-align: center
