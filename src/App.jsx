@@ -11,19 +11,19 @@ function App () {
 
   const addPerson = () => {
     if (numPerson === data.length) {
+      setPersonState([])
       numPerson = 0
     } else {
       setPersonState([...personState, data[numPerson]])
       numPerson++
     }
-    console.log('a')
+    console.log(personState)
   }
 
   return (
     <div>
-      {personState.map((items, i) => {
+      {personState.map((items) => {
         <CardDefault
-          key={i}
           name={items.name.first}
           surname={items.name.last}
           email={items.email}
