@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, Name, Image, Email, Surname } from './styles'
-export const CardContainer = props => {
+export const CardDefault = props => {
   return (
     <Card>
       <Image src={props.props.card.img.src} alt={props.props.card.img.alt} />
