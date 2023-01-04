@@ -5,7 +5,10 @@ export const Card = styled.div`
         "img surname"
         "img email";
         grid-template-columns: 5rem 12rem;
-        grid-template-rows: 3rem 2rem;
+        grid-template-rows: 2.5rem 2rem;
+        padding-top: 10px;
+        align-items: center;
+    justify-content: center;
 `;
 
 export const Image = styled.img`

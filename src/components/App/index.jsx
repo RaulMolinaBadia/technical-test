@@ -1,15 +1,15 @@
-import './App.css'
-import { ButtonDefault } from './components/Button'
-import { CardDefault } from './components/CardDefault/index'
-import React, { useState, useEffect } from 'react'
-import { usePersonsAPI} from './api/persons'
+import { ContainerApp } from './styles.js'
+import { ButtonDefault } from '../Button/index'
+import { CardDefault } from '../CardDefault/index'
+import React, { useState } from 'react'
+import { usePersonsAPI } from '../../api/persons'
 
-const apiURL = "https://randomuser.me/api/?results=5";
+const apiURL = 'https://randomuser.me/api/?results=5'
 let numPerson = 0
 function App () {
   const [personState, setPersonState] = useState([])
   let dataAPI = usePersonsAPI(apiURL)
-  console.log(dataAPI);
+  console.log(dataAPI)
   const addPerson = () => {
     if (numPerson === dataAPI.results.length) {
       setPersonState([])
@@ -22,7 +22,7 @@ function App () {
   }
 
   return (
-    <div>
+    <ContainerApp>
       {personState.map(items => {
         return (
           <CardDefault
@@ -34,7 +34,7 @@ function App () {
         )
       })}
       <ButtonDefault onClick={addPerson} />
-    </div>
+    </ContainerApp>
   )
 }
 
