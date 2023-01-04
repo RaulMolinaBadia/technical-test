@@ -23,12 +23,13 @@ function App () {
   return (
     <div>
       {personState.map((items) => {
+        return(
         <CardDefault
           name={items.name.first}
           surname={items.name.last}
           email={items.email}
           img={items.picture.medium}
-        />
+        />)
       })}
       <ButtonDefault onClick={addPerson} />
     </div>
