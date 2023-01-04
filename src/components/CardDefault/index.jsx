@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Name, Image, Email, Surname } from './styles'
+import { Card, Name, Image, Email } from './styles'
 export const CardDefault = ({name, surname, email, img}) => {
   return (
     <Card>
