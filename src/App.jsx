@@ -1,11 +1,12 @@
 import './App.css'
 import { CardDefault } from './components/CardDefault/index.jsx'
-import {data} from './dataSamples/card'
+import { data } from './dataSamples/card'
 
 function App () {
-    return (
-      <div>
-        {data.map((items, i) => {
+  return (
+    <div>
+      {data.map((items, i) => {
+        return (
           <CardDefault
             key={i}
             name={items.name.first}
@@ -13,9 +14,10 @@ function App () {
             email={items.email}
             img={items.picture.medium}
           />
-        })}
-      </div>
-    )
+        )
+      })}
+    </div>
+  )
 }
 
 export default App
