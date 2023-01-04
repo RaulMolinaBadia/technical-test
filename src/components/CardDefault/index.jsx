@@ -4,6 +4,7 @@ export const CardDefault = ({name, surname, email, img}) => {
   return (
     <Card>
       <Image src={img} alt={name} />
+      
       <Name>
         {name} {surname}
       </Name>

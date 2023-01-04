@@ -2,26 +2,20 @@ import './App.css'
 import { ButtonDefault } from './components/Button'
 import { CardDefault } from './components/CardDefault/index'
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import { usePersonsAPI} from './api/persons'
 
+const apiURL = "https://randomuser.me/api/?results=5";
 let numPerson = 0
-const apiURL = 'https://randomuser.me/api/?results=5'
 function App () {
   const [personState, setPersonState] = useState([])
-  const [post, setPost] = useState(null)
-
-  useEffect(() => {
-    axios.get(apiURL).then(response => {
-      setPost(response.data)
-      console.log(post.results);
-    })
-  }, [])
+  let dataAPI = usePersonsAPI(apiURL)
+  console.log(dataAPI);
   const addPerson = () => {
-    if (numPerson === post.results.length) {
+    if (numPerson === dataAPI.results.length) {
       setPersonState([])
       numPerson = 0
     } else {
-      setPersonState([...personState, post.results[numPerson]])
+      setPersonState([...personState, dataAPI.results[numPerson]])
       numPerson++
     }
     console.log(personState)
