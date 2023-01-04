@@ -4,7 +4,7 @@ export const Card = styled.div`
     grid-template-areas:
         "img surname"
         "img email";
-        grid-template-columns: 5rem 10rem;
+        grid-template-columns: 5rem 12rem;
         grid-template-rows: 3rem 2rem;
 `;
 
