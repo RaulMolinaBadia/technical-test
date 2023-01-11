@@ -1,4 +1,3 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -8,7 +7,7 @@ export const usePersonsAPI = (apiURL) => {
     useEffect(() => {
         axios.get(apiURL).then((response) => {
             setPost(response.data);
-            console.log(post.results);
+            console.log(post);
         });
     }, [apiURL]);
 
